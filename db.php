@@ -1,9 +1,9 @@
 <?php
 // db.php
-$servername = "localhost";
-$username = "root";  // Replace with your MySQL username
-$password = "";  // Replace with your MySQL password
-$dbname = "metro_events";
+$servername = "suerte-server";
+$username = "nzkvxouelm";  // Replace with your MySQL username
+$password = 'Yvr3mQy$o3jdDAnr';  // Replace with your MySQL password
+$dbname = "suerte-database";
 
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
