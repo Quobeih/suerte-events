@@ -1,5 +1,5 @@
 <?php
-echo "Hello World";
+//echo "Hello World";
 
 // Directly define your database credentials
 $host = 'suerte-server.mysql.database.azure.com';
