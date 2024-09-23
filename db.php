@@ -1,11 +1,17 @@
 <?php
 //echo "Hello World";
-
+//Database=suerte-database;Server=suerte-server.mysql.database.azure.com;User Id=mvfgblikgj;Password=ZqlvG0AFt$0Oy3ND"
 // Directly define your database credentials
-$host = 'suerte-server.mysql.database.azure.com';
+/*$host = 'suerte-server.mysql.database.azure.com';
 $db = 'suerte-database';
 $user = 'nzkvxouelm';
-$pass = 'Yvr3mQy$o3jdDAnr';
+$pass = 'Yvr3mQy$o3jdDAnr';*/
+
+$host = 'suerte-server.mysql.database.azure.com';
+$db = 'suerte-database';
+$user = 'mvfgblikgj';
+$pass = 'ZqlvG0AFt$0Oy3ND';
+
 
 // Create a MySQLi connection
 $conn = mysqli_init();
