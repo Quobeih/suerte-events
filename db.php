@@ -7,10 +7,10 @@ $db = 'suerte-database';
 $user = 'nzkvxouelm';
 $pass = 'Yvr3mQy$o3jdDAnr';*/
 
-$host = 'suerte-server.mysql.database.azure.com';
-$db = 'suerte-database';
-$user = 'mvfgblikgj';
-$pass = 'ZqlvG0AFt$0Oy3ND';
+$host = 'suerte-db.mysql.database.azure.com';
+$db = 'suertedbazure';
+$user = 'suerte';
+$pass = 'Quobeih2021';
 
 
 // Create a MySQLi connection
@@ -22,5 +22,5 @@ mysqli_real_connect($conn, $host, $user, $pass, $db, 3306, NULL, MYSQLI_CLIENT_S
 if (mysqli_connect_errno()) {
     die("Connection failed: " . mysqli_connect_error());
 } 
-//echo "Connected successfully";
+echo "Connected successfully";
 ?>
