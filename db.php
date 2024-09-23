@@ -1,5 +1,23 @@
 <?php
 echo "Hello World";
+
+
+// Get database credentials from environment variables
+$host = getenv('suerte-db.mysql.database.azure.com');
+$db = getenv('suertedbazure');
+$user = getenv('suerte');
+$pass = getenv('Quobeih2021');
+
+// Create connection
+$conn = new mysqli($host, $user, $pass, $db);
+
+// Check connection
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+} 
+echo "Connected successfully";
+
+
 /* db.php
 $servername = "suerte-db.mysql.database.azure.com";
 $username = "suerte";  // Replace with your MySQL username
