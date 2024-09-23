@@ -3,10 +3,10 @@ echo "Hello World";
 
 
 // Get database credentials from environment variables
-$host = getenv('suerte-db.mysql.database.azure.com');
-$db = getenv('suertedbazure');
-$user = getenv('suerte');
-$pass = getenv('Quobeih2021');
+$host = getenv('suerte-server.mysql.database.azure.com');
+$db = getenv('suerte-database');
+$user = getenv('nzkvxouelm');
+$pass = getenv('Yvr3mQy$o3jdDAnr');
 
 // Create connection
 $conn = new mysqli($host, $user, $pass, $db);
