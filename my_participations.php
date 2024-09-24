@@ -1,4 +1,5 @@
 <?php
+ob_start();
 session_start();
 
 // Check if user is logged in
@@ -100,4 +101,5 @@ if (isset($_SESSION['message'])) {
     unset($_SESSION['message']);
     echo '</div>';
 }
+  ob_end_flush();  
 ?>
