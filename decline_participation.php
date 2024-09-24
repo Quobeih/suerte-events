@@ -1,4 +1,7 @@
 <?php
+
+ob_start();
+
 include 'db.php';
 session_start();
 
@@ -16,4 +19,5 @@ if ($conn->query($sql) === TRUE) {
 } else {
     echo "Error: " . $sql . "<br>" . $conn->error;
 }
+ob_end_flush();
 ?>
