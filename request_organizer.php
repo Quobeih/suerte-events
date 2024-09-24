@@ -1,4 +1,5 @@
 <?php
+ob_start();
 include 'db.php';
 session_start();
 
@@ -52,6 +53,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['reason'])) {
 }
 
 $conn->close();
+ob_end_flush();
 ?>
 
 <!DOCTYPE html>
