@@ -1,4 +1,5 @@
 <?php
+ob_start();
 include 'db.php';
 session_start();
 
@@ -36,4 +37,5 @@ if ($result_check->num_rows > 0) {
 $stmt_check->close();
 $stmt->close();
 $conn->close();
+ob_end_flush();
 ?>
