@@ -22,5 +22,5 @@ mysqli_real_connect($conn, $host, $user, $pass, $db, 3306, NULL, MYSQLI_CLIENT_S
 if (mysqli_connect_errno()) {
     die("Connection failed: " . mysqli_connect_error());
 } 
-echo "Connected successfully";
+//echo "Connected successfully";
 ?>
