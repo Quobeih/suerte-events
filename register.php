@@ -13,13 +13,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $password = password_hash($_POST['password'], PASSWORD_DEFAULT);  // Password hashing
 
     // Use prepared statement to prevent SQL injection
-    $stmt = $conn->prepare("INSERT INTO users (name, email, password, role) VALUES (?, ?, ?, ?)");
+    $stmt = $conn->prepare("INSERT INTO users (name, email, password, role) VALUES (?, ?, ?, 'user')");
     if ($stmt === false) {
         die('Prepare failed: ' . htmlspecialchars($conn->error));
     }
 
     $role = 'user';  // Set default role as 'user'
-    $stmt->bind_param("ssss", $name, $email, $password, $role);
+    $stmt->bind_param("sss", $name, $email, $password);
 
     if ($stmt->execute()) {
         echo '<script>alert("Successfully Registered. Please Login."); window.location.href = "login.php";</script>';
