@@ -2,6 +2,11 @@
 // Include the database connection
 include 'db.php';
 
+// Enable error reporting for debugging
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $name = $_POST['name'];
     $email = $_POST['email'];
@@ -9,8 +14,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // Use prepared statement to prevent SQL injection
     $stmt = $conn->prepare("INSERT INTO users (name, email, password, role) VALUES (?, ?, ?, ?)");
-    $role = 'user';  // Set default role as 'user'
+    if ($stmt === false) {
+        die('Prepare failed: ' . htmlspecialchars($conn->error));
+    }
     
+    $role = 'user';  // Set default role as 'user'
     $stmt->bind_param("ssss", $name, $email, $password, $role);
 
     if ($stmt->execute()) {
@@ -23,6 +31,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 $conn->close();
 ?>
+
 
 
 <!DOCTYPE html>
