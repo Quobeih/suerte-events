@@ -1,5 +1,5 @@
 <?php
-ob_start();
+
 // Include the database connection
 include 'db.php';
 
@@ -18,7 +18,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         echo "<div class='alert alert-danger'>Error: " . $sql . "<br>" . $conn->error . "</div>";
     }
 }
-    ob_end_flush();
+ 
 ?>
 
 <!DOCTYPE html>
