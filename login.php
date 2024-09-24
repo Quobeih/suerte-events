@@ -1,4 +1,7 @@
 <?php
+// Start output buffering to avoid issues with headers
+ob_start();
+
 // Include the database connection
 include 'db.php';
 session_start();
@@ -19,11 +22,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $_SESSION['user_id'] = $user['id'];
             $_SESSION['role'] = $user['role'];
 
-         
-            echo "<div class='alert alert-success'>Login successful! Welcome " . htmlspecialchars($user['name']) . "</div>";
             // Redirect to dashboard or homepage
             header('Location: dashboard.php');
-            exit();
+            exit(); // Ensure the script stops after redirection
         } else {
             echo "<div class='alert alert-danger'>Incorrect password!</div>";
         }
@@ -31,7 +32,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         echo "<div class='alert alert-danger'>User not found!</div>";
     }
 }
+
+// End output buffering and flush output
+ob_end_flush();
 ?>
+
 
 <!DOCTYPE html>
 <html lang="en">
