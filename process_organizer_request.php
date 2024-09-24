@@ -1,4 +1,5 @@
 <?php
+ob_start();
 session_start();
 
 // Check if user is logged in and is an admin
@@ -41,4 +42,5 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     header('Location: admin_organizer_requests.php');
     exit;
 }
+    ob_end_flush();
 ?>
