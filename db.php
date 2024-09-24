@@ -7,10 +7,10 @@ $db = 'suerte-database';
 $user = 'nzkvxouelm';
 $pass = 'Yvr3mQy$o3jdDAnr';*/
 
-$host = 'suerte-db.mysql.database.azure.com';
-$db = 'suertedbazure';
-$user = 'suerte';
-$pass = 'Quobeih2021';
+$host = 'suerte-server.mysql.database.azure.com';
+$db = 'suerte-database';
+$user = 'nzkvxouelm';
+$pass = 'Yvr3mQy$o3jdDAnr';
 
 
 // Create a MySQLi connection
