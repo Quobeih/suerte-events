@@ -1,4 +1,5 @@
 <?php
+ob_start();
 session_start();
 
 // Check if user is logged in
@@ -40,6 +41,7 @@ $result_participants = $stmt_participants->get_result();
 
 // Include Bootstrap CSS for styling
 echo '<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">';
+ob_end_flush();
 ?>
 
 <style>
