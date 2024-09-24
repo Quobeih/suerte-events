@@ -1,4 +1,6 @@
 <?php
+ob_start();
+
 include 'db.php';
 session_start();
 
@@ -31,6 +33,7 @@ if (isset($_GET['id'])) {
     $result = $conn->query($sql);
     $event = $result->fetch_assoc();
 }
+ob_end_flush(); 
 ?>
 
 <!DOCTYPE html>
