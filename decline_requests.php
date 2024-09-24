@@ -1,4 +1,5 @@
 <?php
+ob_start();
 include('db.php');
 
 $request_id = $_GET['request_id'];
@@ -9,4 +10,5 @@ mysqli_query($conn, $update_query);
 
 header("Location: dashboard.php");
 exit;
+ob_end_flush();
 ?>
