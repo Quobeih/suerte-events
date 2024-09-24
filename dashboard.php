@@ -1,4 +1,5 @@
 <?php
+ob_start();
 session_start();
 
 // Check if user is logged in
@@ -127,6 +128,8 @@ if ($user_role == 'admin') {
     }
 }
 echo '</div>';
+ob_end_flush();
+?>
 
 // Include Bootstrap JS and dependencies
 echo '<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>';
