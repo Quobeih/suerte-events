@@ -1,4 +1,5 @@
 <?php
+ob_start();
 include 'db.php';
 session_start();
 
@@ -17,6 +18,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         echo "Error: " . $sql . "<br>" . $conn->error;
     }
 }
+    ob_end_flush();
 ?>
 
 <!DOCTYPE html>
