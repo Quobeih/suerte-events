@@ -1,25 +1,29 @@
 <?php
-
 // Include the database connection
 include 'db.php';
 
-// Handle form submission
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $name = $_POST['name'];
     $email = $_POST['email'];
     $password = password_hash($_POST['password'], PASSWORD_DEFAULT);  // Password hashing
-   // $role = $_POST['role'];  // Capture the selected role
 
-    // Insert user into database
-    $sql = "INSERT INTO users (name, email, password, role) VALUES ('$name', '$email', '$password', 'user')";
-    if ($conn->query($sql) === TRUE) {
+    // Use prepared statement to prevent SQL injection
+    $stmt = $conn->prepare("INSERT INTO users (name, email, password, role) VALUES (?, ?, ?, ?)");
+    $role = 'user';  // Set default role as 'user'
+    
+    $stmt->bind_param("ssss", $name, $email, $password, $role);
+
+    if ($stmt->execute()) {
         echo '<script>alert("Successfully Registered. Please Login."); window.location.href = "login.php";</script>';
     } else {
-        echo "<div class='alert alert-danger'>Error: " . $sql . "<br>" . $conn->error . "</div>";
+        echo "<div class='alert alert-danger'>Error: " . $stmt->error . "</div>";
     }
+    $stmt->close();
 }
- 
+
+$conn->close();
 ?>
+
 
 <!DOCTYPE html>
 <html lang="en">
