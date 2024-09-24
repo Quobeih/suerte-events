@@ -1,4 +1,5 @@
 <?php
+ob_start();
 session_start();
 include('db.php');
 
@@ -53,4 +54,5 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     header("Location: dashboard.php");
     exit;
 }
+    ob_end_flush();
 ?>
