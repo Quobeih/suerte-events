@@ -1,4 +1,5 @@
 <?php
+ob_start();
 include 'db.php';
 session_start();
 
@@ -46,6 +47,6 @@ if ($stmt->execute()) {
 
 $stmt->close();
 $conn->close();
+ob_end_flush();
 ?>
 
-?>
