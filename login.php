@@ -19,7 +19,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         
         // Verify the password
         if (password_verify($password, $user['password'])) {
-            $_SESSION['user_id'] = $user['my_row_id'];
+            $_SESSION['user_id'] = $user['id'];
             $_SESSION['role'] = $user['role'];
 
             // Redirect to dashboard or homepage
