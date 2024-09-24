@@ -1,4 +1,5 @@
 <?php
+ob_start();
 include('db.php');
 
 $request_id = $_GET['request_id'];
@@ -42,4 +43,6 @@ if ($stmt->execute()) {
 
 $stmt->close();
 $conn->close();
+
+ob_end_flush();
 ?>
