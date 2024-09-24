@@ -1,4 +1,6 @@
 <?php
+ob_start();
+
 include 'db.php';
 session_start();
 
@@ -32,6 +34,7 @@ $stmt_unread_count->bind_param("i", $user_id);
 $stmt_unread_count->execute();
 $result_unread_count = $stmt_unread_count->get_result();
 $unread_count = $result_unread_count->fetch_assoc()['unread_count'];
+ob_end_flush();
 ?>
 
 <!DOCTYPE html>
