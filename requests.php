@@ -1,4 +1,5 @@
 <?php
+ob_start();
 include 'db.php';
 session_start();
 
@@ -18,6 +19,7 @@ $sql_participation_requests = "SELECT participation_requests.*, users.name AS us
                                JOIN events ON participation_requests.event_id = events.id
                                WHERE participation_requests.status = 'pending'";
 $participation_requests = $conn->query($sql_participation_requests);
+ob_end_flush();
 ?>
 
 <!DOCTYPE html>
