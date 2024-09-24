@@ -17,7 +17,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if ($stmt === false) {
         die('Prepare failed: ' . htmlspecialchars($conn->error));
     }
-    
+
     $role = 'user';  // Set default role as 'user'
     $stmt->bind_param("ssss", $name, $email, $password, $role);
 
@@ -31,6 +31,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 $conn->close();
 ?>
+
 
 
 
